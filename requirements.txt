@@ -1,5 +1,7 @@
-streamlit==1.37.0
+streamlit==1.40.0
 requests==2.32.3
 biopython==1.84
 easy-entrez==0.3.7
-google-genai==0.8.5
+google-genai==1.38.0
+
+
