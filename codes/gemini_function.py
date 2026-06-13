@@ -2,6 +2,7 @@
 import requests
 import os
 from google import genai
+from google.genai import errors
 
 from ncbi_api import get_info_from_ncbi
 from get_ensembl import get_info_from_ensembl
@@ -16,6 +17,10 @@ def get_summary(rs_input) -> str:
         ensembl_result = get_info_from_ensembl(rs_input)
         entrez_result = get_entrez_result(rs_input)
         result = SNP_to_genai(ncbi_result, ensembl_result, entrez_result)
+    except genai.errors.ClientError as e:
+        result = f"Gemini API error ({e.code}): {e.message}\n\n"
+        if e.code == 429:
+            result += " **Please check your API key and try again.**"
     except Exception as e:
         result = f"{e}\n\n **Please check the rs number and try again.**"
     return result
