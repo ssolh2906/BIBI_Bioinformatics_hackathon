@@ -40,7 +40,7 @@ def SNP_to_genai(ncbi_result: dict, ensembl_result: str, entrez_result: str):
     )
 
     resp = client.models.generate_content(
-        model="gemini-2.0-flash-001",
+        model="gemini-2.0-flash-lite",
         config={"temperature": 0, "system_instruction": system_rules},
         contents=[{
             "role": "user",
@@ -62,4 +62,3 @@ if __name__ == "__main__":
     print("Running Gemini_function.py")
     print(summary[:200])
     print(f"TYPE: {type(summary)}")
-
