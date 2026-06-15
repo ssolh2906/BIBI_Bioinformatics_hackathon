@@ -1,3 +1,13 @@
+---
+title: SNP Summary
+emoji: 🧬
+colorFrom: blue
+colorTo: yellow
+sdk: docker
+app_port: 7860
+pinned: false
+---
+
 # BIBI_Bioinformatics_hackathon
 Overview:
 We built a simple streamlit interface that will accept any rs id. Our Gemini AI agent uses data from NCBI and Ensembl to generate an insightful summary. 
