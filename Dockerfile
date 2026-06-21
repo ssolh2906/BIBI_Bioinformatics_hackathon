@@ -15,4 +15,7 @@ EXPOSE 7860
 # Run the Streamlit app; bind to 0.0.0.0, reachable from outside the container
 CMD ["streamlit", "run", "codes/streamlit_ui.py", \
      "--server.port=7860", \
-     "--server.address=0.0.0.0"]
+     "--server.address=0.0.0.0", \
+     "--server.headless=true", \
+     "--server.enableCORS=false", \
+     "--server.enableXsrfProtection=false"]
